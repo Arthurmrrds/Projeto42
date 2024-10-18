@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RateStation</title>
+    <link rel="stylesheet" href="/public/style2.css">
+</head>
+<body>
+     <nav>
+        <ul>
+            <li> <a href="#"></a>Home</li>
+            <li> <a href="#"></a>Features</li>
+            <li> <a href="#"></a>About</li>
+            <li> <a href="#"></a>Contact</li>
+        </ul>
+        <img src="/uploads/<%= profilePic ? profilePic : 'default.png' %>" class="user-pic" onclick="toggleMenu()">
+
+        <div class="sub-menu-wrap" id="subMenu">
+            <div class="sub-menu">
+                <div> <div class="user-info">
+                    <img src="/uploads/<%= profilePic ? profilePic : 'default.png' %>" class="user-pic" onclick="toggleMenu()">
+                    <h2><%= username %></h2>
+                </div>
+                <hr>
+                <a href="#" class="sub-menu-link">
+                    <img src="/public/image/profile.png" alt="Profile">
+                    <p>Edit Profile</p>
+                    <span></span>
+                </a>
+                <a href="#" class="sub-menu-link" onclick="logout()">
+                    <img src="/public/image/logout.png" alt="Logout">
+                    <p>Logout</p>
+                    <span></span>
+                </a>
+            </div>
+        </div>
+     </nav>
+    </div>
+    <section id="section">
+        <div class="row">
+            <div class="column">
+                <div class="card">
+                    <center><img src="/public/image/bust.jpg" class="thumbnail" alt="Bust"></center>
+                    <h3>Nome</h3>
+                </div>
+                
+                <section id="section">
+        <div class="row">
+            <div class="column">
+                <div class="card">
+                    <center><img src="/public/image/slap.jpg" class="thumbnail" alt="Slap"></center>
+                    <h3>Nome</h3>
+                </div>
+                <section id="section">
+                    <div class="row">
+                        <div class="column">
+                            <div class="card">
+                                <center><img src="/public/image/jet.jpg" class="thumbnail" alt="Jet"></center>
+                                <h3>Nome</h3>
+                            </div>
+                            <div style="padding-left: 16px">
+                        </div>
+                    </div>    
+                </section>
+</body>
+<script>
+    let subMenu = document.getElementById("subMenu");
+
+function toggleMenu(){
+subMenu.classList.toggle("open-menu");
+
+}
+function logout() {
+        window.location.href = 'http://localhost:5000/';  // Redireciona para o endereço desejado
+    }
+</script>
+</html>
