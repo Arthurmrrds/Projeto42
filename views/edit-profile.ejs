@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Profile</title>
+    <link rel="stylesheet" href="/public/style3.css">
+</head>
+<body>
+    <div class="form-container">
+    <h2>Edit Profile</h2>
+    <form action="/update-profile" method="POST" enctype="multipart/form-data">
+        <input type="hidden" name="existingUsername" value="<%= username %>">
+
+        <div class="form-group">
+            <label for="username">Nome:</label>
+            <input type="text" id="username" name="username" value="<%= username %>" required>
+        </div>
+        <div class="form-group">
+            <label for="profilePic">Foto de Perfil:</label>
+            <input type="file" id="profilePic" name="profilePic">
+            <input type="hidden" name="existingProfilePic" value="<%= profilePic %>">
+        </div>
+        <div class="form-group">
+            <label for="biography">Biografia:</label>
+            <textarea id="biography" name="biography" rows="4" cols="50" placeholder="Escreva sua biografia aqui..."><%= biography %></textarea>
+        </div>
+        <button type="submit" class="submit-btn">Atualizar</button>
+    </div>
+    </form>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const biographyElement = document.querySelector("#biography"); // Seletor correto
+
+            if (biographyElement) { // Verifica se o elemento existe
+                biographyElement.classList.add("sua-classe"); // Exemplo de manipulação da classe
+            } else {
+                console.error("Elemento de biografia não encontrado."); // Log se o elemento não existir
+            }
+        });
+    </script>
+</body>
+</html>

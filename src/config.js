@@ -27,6 +27,10 @@ const LoginSchema = new mongoose.Schema({
     profilePic: {
     type: String, // Guardará o caminho da imagem
     default: null
+},
+biography: {
+    type: String, // Campo para a biografia
+    default: null
 }
     
 });
